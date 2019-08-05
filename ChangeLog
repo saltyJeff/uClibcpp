@@ -1,3 +1,7 @@
+Azure Sphere changes
+-   Cut down cstdio and cstdlib to match what is provided by the Azure Sphere stdlib.h header
+-   Cut out fstream as it relies on being able to read files non-blocking
+
 0.2.5
 -   wrapper: Fix handling arguments with spaces
 -   stream: Add support for 64-bit integers

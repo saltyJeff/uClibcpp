@@ -30,3 +30,30 @@ A few notes:
 -	The files in the tests/testoutput directory ending in good are used as reference for
 	the test suite - this allows a byte-for-byte comparison of the output of the streams
 	library, and so on.
+
+Edits for Azure Sphere
+
+I have matched cstdlib and cstdio to what is provided by the header (there is no write ability on Azure Sphere).
+To install, first figure out where your SYSROOT is (mine's at 'C:\Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2'
+
+1. Copy all contents of the include/ folder to SYSROOT/usr/include
+2. Copy al the contents of the src/ folder to your Visual Studio solution. Make sure you use Add Existing Item so VS knows
+   you have the CPP files.
+3. Right click your project (the purple box with the 2 + signs). In the Configuration Properties/"C/C++"/Command Line in the Additional options
+box put -fno-rtti to disable RTTI support
+4. Build
+
+NOTES:
+
+The library is not automatically included into your files (if you want to use "new" and "delete", you need to
+#include <new> )
+
+If you're not using visual studio, you can run "make menuconfig" then "make" from within WSL to build an archive. Then 
+tell CMake to link against that archive file.
+
+I couldn't find a dynamic library version of the C++ std lib mentioned anywhere so I'm betting on just linking it all statically together.
+This does raise some interesting issues with licensing that I'm not qualified to address, but look up LGPL law/consult a lawyer
+
+Example blink project that includes a lot of C++ only features can be found here:
+https://github.com/saltyJeff/AzureSphereCpp
+
