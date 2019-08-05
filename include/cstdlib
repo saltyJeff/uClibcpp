@@ -24,9 +24,6 @@
 
 
 namespace std{
-	using ::abort;
-	using ::abs;
-	using ::atexit;
 	using ::atol;
 	using ::atof;
 	using ::atoi;
@@ -35,7 +32,6 @@ namespace std{
 	using ::div;
 	using ::exit;
 	using ::free;
-	using ::getenv;
 	using ::labs;
 	using ::ldiv;
 	using ::malloc;
@@ -46,7 +42,6 @@ namespace std{
 	using ::strtod;
 	using ::strtol;
 	using ::strtoul;
-	using ::system;
 #ifdef __UCLIBCXX_HAS_WCHAR__
 	using ::mblen;
 	using ::mbstowcs;

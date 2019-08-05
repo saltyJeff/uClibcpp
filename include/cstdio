@@ -34,12 +34,10 @@ namespace std{
 	using ::fgetc;
 	using ::fgetpos;
 	using ::fgets;
-	using ::fopen;
 	using ::fprintf;
 	using ::fputc;
 	using ::fputs;
 	using ::fread;
-	using ::freopen;
 	using ::fscanf;
 	using ::fseek;
 	using ::fsetpos;
@@ -56,15 +54,12 @@ namespace std{
 	using ::putc;
 	using ::putchar;
 	using ::puts;
-	using ::remove;
-	using ::rename;
 	using ::rewind;
 	using ::scanf;
 	using ::setbuf;
 	using ::setvbuf;
 	using ::sprintf;
 	using ::sscanf;
-	using ::tmpfile;
 #if _GLIBCXX_USE_TMPNAM
 	using ::tmpnam;
 #endif
